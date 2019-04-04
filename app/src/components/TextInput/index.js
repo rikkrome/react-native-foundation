@@ -32,7 +32,7 @@ export default function TextInputComp({
         color: theme.textColor,
         borderBottomColor: theme.inactiveTintColor,
         borderBottomWidth: StyleSheet.hairlineWidth,
-        borderWidth: 5,
+        borderWidth: 0,
         borderRadius: 5,
         marginVertical: 10,
         marginHorizontal: 10,

@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  View,
-  AsyncStorage,
-  FlatList,
-  Switch,
-  Text,
-  StyleSheet,
-  Alert
-} from "react-native";
+import { View, FlatList, Switch, Text, StyleSheet, Alert } from "react-native";
+import AsyncStorage from "@react-native-community/async-storage";
 import { getTheme, setTheme } from "../../../components/styles/colors";
 import { ButtonCTA } from "../../../components";
 

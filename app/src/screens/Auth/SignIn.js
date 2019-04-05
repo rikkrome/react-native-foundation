@@ -47,6 +47,7 @@ export default class SignIn extends React.Component {
             textContentType={"password"}
             autoComplete={"password"}
             secureTextEntry={true}
+            onSubmitEditing={this._login}
           />
           <ButtonCTA title="Sign in" onPress={this._login} />
           <ButtonCTA

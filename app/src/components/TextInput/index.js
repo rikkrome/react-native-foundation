@@ -10,7 +10,9 @@ export default function TextInputComp({
   placeholder = "",
   textContentType = "none",
   secureTextEntry = false,
-  autoComplete = "off"
+  autoComplete = "off",
+  onSubmitEditing = null,
+  autoCapitalize = "none"
 }) {
   if (!onChangeText) {
     console.log("[TextInputComp] MISSING onChangeText");
@@ -47,6 +49,8 @@ export default function TextInputComp({
       textContentType={textContentType}
       secureTextEntry={secureTextEntry}
       autoComplete={autoComplete}
+      onSubmitEditing={onSubmitEditing}
+      autoCapitalize={autoCapitalize}
     />
   );
 }

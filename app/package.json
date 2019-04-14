@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
+    "startenv": "npm run start",
     "test": "jest",
     "ios": "react-native run-ios"
   },
@@ -12,7 +13,9 @@
     "react": "16.8.3",
     "react-native": "0.59.3",
     "react-native-gesture-handler": "^1.1.0",
-    "react-navigation": "^3.6.1"
+    "react-native-svg": "^9.3.7",
+    "react-navigation": "^3.6.1",
+    "victory-native": "^32.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",

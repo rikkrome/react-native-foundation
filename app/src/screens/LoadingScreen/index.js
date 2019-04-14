@@ -3,9 +3,8 @@ import { View, Text } from "react-native";
 import AsyncStorage from "@react-native-community/async-storage";
 import { fonts, WIDTH } from "../../components/styles";
 import { setTheme } from "../../components/styles/colors";
-
 import { ProgressBar } from "../../components";
-
+import DevConfig from "../../dev.config";
 export default class LoadingScreen extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +14,10 @@ export default class LoadingScreen extends Component {
   }
 
   componentDidMount() {
+    if (__DEV__) {
+      // console.log(DevConfig);
+      // debugger;
+    }
     this._init();
   }
 
@@ -38,9 +41,9 @@ export default class LoadingScreen extends Component {
 
   _getUserToken = async () => {
     const userToken = await AsyncStorage.getItem("userToken");
-    if (__DEV__) {
-      return false;
-    }
+    // if (__DEV__) {
+    //   return false;
+    // }
     return userToken;
   };
 

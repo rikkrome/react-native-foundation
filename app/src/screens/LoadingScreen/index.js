@@ -4,7 +4,8 @@ import AsyncStorage from "@react-native-community/async-storage";
 import { fonts, WIDTH } from "../../components/styles";
 import { setTheme } from "../../components/styles/colors";
 import { ProgressBar } from "../../components";
-import DevConfig from "../../dev.config";
+import { deepLink } from "../../../dev.config.js";
+
 export default class LoadingScreen extends Component {
   constructor(props) {
     super(props);
@@ -14,11 +15,11 @@ export default class LoadingScreen extends Component {
   }
 
   componentDidMount() {
-    if (__DEV__) {
-      // console.log(DevConfig);
-      // debugger;
+    if (__DEV__ && deepLink.enable) {
+      this.props.navigation.navigate(deepLink.path);
+    } else {
+      this._init();
     }
-    this._init();
   }
 
   _init = () => {

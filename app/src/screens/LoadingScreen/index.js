@@ -15,19 +15,19 @@ export default class LoadingScreen extends Component {
   }
 
   componentDidMount() {
+    this._init();
+  }
+
+  _init = async () => {
+    await this._setTheme();
     if (__DEV__ && deepLink.enable) {
       this.props.navigation.navigate(deepLink.path);
     } else {
-      this._init();
+      setTimeout(async () => {
+        const userToken = await this._getUserToken();
+        this.props.navigation.navigate(userToken ? "App" : "Auth");
+      }, 1000);
     }
-  }
-
-  _init = () => {
-    setTimeout(async () => {
-      const userToken = await this._getUserToken();
-      await this._setTheme();
-      this.props.navigation.navigate(userToken ? "App" : "Auth");
-    }, 1000);
   };
 
   _setTheme = async () => {

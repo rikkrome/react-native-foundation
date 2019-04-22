@@ -1,7 +1,10 @@
 import { createStackNavigator } from "react-navigation";
 import { AnalyticsViewTwo } from "../../../screens/Analytics/index";
 import { getTheme } from "../../../components/styles/colors";
-import { StatsViewOne } from "../../../screens/Analytics/AnalyticsViewOne";
+import {
+  StatsViewOne,
+  StatsViewTwo
+} from "../../../screens/Analytics/AnalyticsViewOne";
 
 const AnalyticsViewOne = createStackNavigator(
   {
@@ -11,10 +14,19 @@ const AnalyticsViewOne = createStackNavigator(
       navigationOptions: {
         title: "Stats"
       }
+    },
+    StatsViewTwo: {
+      screen: StatsViewTwo,
+      path: "Analytics/:StatsViewTwo",
+      navigationOptions: {
+        title: "Stats"
+      }
     }
   },
   {
     initialRouteName: "StatsViewOne",
+    headerMode: "none",
+    mode: "modal",
     defaultNavigationOptions: ({ navigation }) => {
       const theme = getTheme();
       return {
@@ -38,8 +50,8 @@ const AnalyticsViewOne = createStackNavigator(
  */
 const AnalyticsStack = {
   AnalyticsViewOne: {
-    screen: AnalyticsViewOne,
-    path: "Analytics/:AnalyticsViewOne",
+    screen: StatsViewOne,
+    path: "Analytics/:StatsViewOne",
     navigationOptions: {
       title: "Stats"
     }

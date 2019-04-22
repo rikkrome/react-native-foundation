@@ -1,4 +1,4 @@
 import StatsViewOne from "./StatsViewOne";
-// import StatsViewTwo from "./StatsViewTwo";
+import StatsViewTwo from "./StatsViewTwo";
 
-export { StatsViewOne };
+export { StatsViewOne, StatsViewTwo };

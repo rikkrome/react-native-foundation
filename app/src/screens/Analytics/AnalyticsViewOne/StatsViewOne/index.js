@@ -1,50 +1,54 @@
 import React from "react";
-import { View, FlatList } from "react-native";
+import { View, Text, FlatList, Modal, SafeAreaView } from "react-native";
+import { ButtonCTA, IconBtn, ModalView } from "../../../../components";
 import { getTheme } from "../../../../components/styles/colors";
-import { WIDTH, HEIGHT } from "../../../../components/styles";
-import { Container } from "../../../../components";
-import { VictoryChart, VictoryGroup, VictoryArea } from "victory-native";
-
+import StatsViewTwo from "../StatsViewTwo";
 export default class AnalyticsViewOne extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { yOffset: null, xOffset: null, selectedCard: null };
+    this.state = {
+      data: [{ id: "0" }],
+      modalVisible: false
+    };
   }
-  render() {
-    const theme = getTheme();
-    const ChartHeight = HEIGHT / 2;
-    return (
-      <Container>
-        <View
-          style={{ backgroundColor: theme.backgroundColor, marginTop: 10 }}
-          pointerEvents="none"
-        >
-          <VictoryChart width={WIDTH} height={300}>
-            <VictoryGroup
-              style={{
-                data: { strokeWidth: 1, fillOpacity: 0.0 }
-              }}
-            >
-              <VictoryArea
-                style={{
-                  data: { stroke: "yellow" }
-                }}
-                data={[
-                  { x: 1, y: 2 },
-                  { x: 2, y: 3 },
-                  { x: 3, y: 5 },
-                  { x: 4, y: 4 },
-                  { x: 5, y: 7 }
-                ]}
-              />
-            </VictoryGroup>
-          </VictoryChart>
-        </View>
 
-        {/* <View
-          style={{ backgroundColor: "green", marginTop: 10, height: 400 }}
-        /> */}
-      </Container>
+  _setModalVisible = visible => {
+    this.setState({ modalVisible: visible });
+  };
+
+  _keyExtractor = item => item.id;
+
+  _renderItem = ({ item }) => (
+    <View style={{ height: 300, backgroundColor: "red" }}>
+      <Text style={{ color: "#ffffff" }}>TESTING</Text>
+      <ButtonCTA
+        title="Go to StatsViewTwo"
+        onPress={() => this._setModalVisible(true)}
+      />
+    </View>
+  );
+
+  _Modal = () => {
+    return (
+      <ModalView
+        visible={this.state.modalVisible}
+        setModalVisible={this._setModalVisible}
+      >
+        <StatsViewTwo />
+      </ModalView>
+    );
+  };
+
+  render() {
+    return (
+      <View>
+        {this._Modal()}
+        <FlatList
+          data={this.state.data}
+          keyExtractor={this._keyExtractor}
+          renderItem={this._renderItem}
+        />
+      </View>
     );
   }
 }

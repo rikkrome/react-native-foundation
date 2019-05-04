@@ -2,8 +2,8 @@ import React from "react";
 import { View, TouchableOpacity, Text } from "react-native";
 import { colors, fonts, WIDTH } from "../styles";
 
-export default function ButtonCTA({ type, style, title, onPress }) {
-  let _width = WIDTH / 1.5;
+export default function ButtonCTA({ width, type, style, title, onPress }) {
+  let _width = width;
   let _height = 50;
   let _style = typeof style === "object" ? { ...style } : {};
   const theme = colors.getTheme();
@@ -19,8 +19,6 @@ export default function ButtonCTA({ type, style, title, onPress }) {
         height: _height,
         backgroundColor: btnTheme.backgroundColor,
         borderRadius: 5,
-        marginVertical: 10,
-        marginHorizontal: 10,
         ..._style
       }}
     >
@@ -38,3 +36,9 @@ export default function ButtonCTA({ type, style, title, onPress }) {
     </TouchableOpacity>
   );
 }
+
+ButtonCTA.defaultProps = {
+  width: WIDTH / 1.5,
+  title: "-",
+  type: "btnPrimary"
+};

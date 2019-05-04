@@ -58,7 +58,14 @@ export default class SignUp extends React.Component {
             autoComplete={"password"}
             secureTextEntry={true}
           />
-          <ButtonCTA title="Sign up" onPress={this._onPressSignUp} />
+          <ButtonCTA
+            title="Sign up"
+            onPress={this._onPressSignUp}
+            style={{
+              marginVertical: 10,
+              marginHorizontal: 10
+            }}
+          />
         </View>
       </View>
     );

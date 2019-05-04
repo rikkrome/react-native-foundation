@@ -151,12 +151,23 @@ export default class SettingsViewOne extends React.Component {
         <ButtonCTA
           title="Go to SettingsViewTwo"
           onPress={() => this.props.navigation.navigate("SettingsViewTwo")}
+          style={{
+            marginVertical: 10,
+            marginHorizontal: 10
+          }}
         />
       </View>
     );
     const logout = (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <ButtonCTA title="Logout" onPress={this._logout} />
+        <ButtonCTA
+          title="Logout"
+          onPress={this._logout}
+          style={{
+            marginVertical: 10,
+            marginHorizontal: 10
+          }}
+        />
       </View>
     );
 

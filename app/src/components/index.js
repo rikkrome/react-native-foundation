@@ -6,7 +6,8 @@ import TextInput from "./TextInput";
 // Layouts ModalView
 import Container from "./layouts/Container";
 import ModalView from "./layouts/ModalView";
-
+// Text
+import Text from "./Text/index";
 export {
   ButtonCTA,
   IconBtn,
@@ -14,5 +15,6 @@ export {
   TextInput,
   Styles,
   Container,
-  ModalView
+  ModalView,
+  Text
 };

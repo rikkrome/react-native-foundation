@@ -18,7 +18,7 @@ export default function ButtonCTA({ width, type, style, title, onPress }) {
         width: _width,
         height: _height,
         backgroundColor: btnTheme.backgroundColor,
-        borderRadius: 5,
+        borderRadius: 3,
         ..._style
       }}
     >

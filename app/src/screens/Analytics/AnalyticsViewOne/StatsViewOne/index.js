@@ -17,7 +17,31 @@ export default class AnalyticsViewOne extends React.Component {
             statType: "CORES",
             progress: 60,
             totalStat: 20,
-            currentStat: 12
+            currentStat: 12,
+            temp: "100 C",
+            info: [
+              {
+                label: "Processes",
+                value: "2K"
+              },
+              {
+                label: "THREADS",
+                value: "5.2K"
+              }
+            ],
+            chartData: [
+              { x: 1, y: 4 },
+              { x: 2, y: 3 },
+              { x: 3, y: 1 },
+              { x: 4, y: 6 },
+              { x: 5, y: 6 },
+              { x: 6, y: 8 },
+              { x: 7, y: 6 },
+              { x: 8, y: 8 },
+              { x: 9, y: 7 },
+              { x: 10, y: 9 },
+              { x: 11, y: 10 }
+            ]
           }
         },
         {
@@ -25,9 +49,29 @@ export default class AnalyticsViewOne extends React.Component {
           data: {
             statType: "GB",
             statName: "RAM",
-            progress: 99,
-            totalStat: 7,
-            currentStat: 32
+            progress: 15,
+            totalStat: 32,
+            currentStat: 4.8,
+            temp: "50 C",
+            info: [
+              {
+                label: "CACHE",
+                value: "2.5/8GB"
+              }
+            ],
+            chartData: [
+              { x: 1, y: 10 },
+              { x: 2, y: 13 },
+              { x: 3, y: 9 },
+              { x: 4, y: 9 },
+              { x: 5, y: 6 },
+              { x: 6, y: 8 },
+              { x: 7, y: 2 },
+              { x: 8, y: 1 },
+              { x: 9, y: 2 },
+              { x: 10, y: 3 },
+              { x: 11, y: 1 }
+            ]
           }
         },
         {
@@ -37,7 +81,31 @@ export default class AnalyticsViewOne extends React.Component {
             statName: "STORAGE",
             progress: 99,
             totalStat: 99,
-            currentStat: 100
+            currentStat: 100,
+            temp: "100 C",
+            info: [
+              {
+                label: "IN",
+                value: "100MB/s"
+              },
+              {
+                label: "OUT",
+                value: "100MB/s"
+              }
+            ],
+            chartData: [
+              { x: 1, y: 99 },
+              { x: 2, y: 90 },
+              { x: 3, y: 100 },
+              { x: 4, y: 99.9 },
+              { x: 5, y: 94.2 },
+              { x: 6, y: 92.1 },
+              { x: 7, y: 88.3 },
+              { x: 8, y: 95.1 },
+              { x: 9, y: 95.3 },
+              { x: 10, y: 97.4 },
+              { x: 11, y: 99 }
+            ]
           }
         }
       ],
@@ -59,7 +127,14 @@ export default class AnalyticsViewOne extends React.Component {
   };
 
   _renderItem = ({ item }) => {
-    return <StatBar {...item.data} data={item.data} onPress={this._onPress} />;
+    return (
+      <StatBar
+        {...item.data}
+        data={item.data}
+        onPress={this._onPress}
+        style={{ paddingVertical: 30 }}
+      />
+    );
   };
 
   _Modal = () => {

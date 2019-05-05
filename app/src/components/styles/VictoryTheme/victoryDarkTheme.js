@@ -29,11 +29,11 @@ var fontSize = 12; // *
 // * Layout
 // *
 
-var padding = 10;
+var padding = 7;
 var baseProps = {
   width: 350,
   height: 350,
-  padding: 20
+  padding: 25
 }; // *
 // * Labels
 // *

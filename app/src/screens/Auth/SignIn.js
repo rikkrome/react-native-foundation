@@ -49,10 +49,21 @@ export default class SignIn extends React.Component {
             secureTextEntry={true}
             onSubmitEditing={this._login}
           />
-          <ButtonCTA title="Sign in" onPress={this._login} />
+          <ButtonCTA
+            title="Sign in"
+            onPress={this._login}
+            style={{
+              marginVertical: 10,
+              marginHorizontal: 10
+            }}
+          />
           <ButtonCTA
             title="Sign up"
             onPress={() => this.props.navigation.navigate("SignUp")}
+            style={{
+              marginVertical: 10,
+              marginHorizontal: 10
+            }}
           />
         </View>
       </View>

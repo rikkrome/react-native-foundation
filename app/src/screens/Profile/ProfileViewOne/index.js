@@ -31,14 +31,26 @@ export default class ProfileViewOne extends React.Component {
           <ButtonCTA
             title="Go to ProfileViewTwo"
             onPress={() => this.props.navigation.navigate("ProfileViewTwo")}
+            style={{
+              marginVertical: 10,
+              marginHorizontal: 10
+            }}
           />
           <ButtonCTA
             title="Go to Stats"
             onPress={() => this.props.navigation.navigate("AnalyticsViewOne")}
+            style={{
+              marginVertical: 10,
+              marginHorizontal: 10
+            }}
           />
           <ButtonCTA
             title="Go to Activity"
             onPress={() => this.props.navigation.navigate("AnalyticsViewTwo")}
+            style={{
+              marginVertical: 10,
+              marginHorizontal: 10
+            }}
           />
         </View>
       </View>

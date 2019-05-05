@@ -1,20 +1,24 @@
 /**
  * @Themes
  */
+
+import { victoryDarkTheme } from "./VictoryTheme/index";
+
 const darkTheme = {
   primary: "#D40424",
-  secondary: "#AEC5D6",
+  secondary: "#555555",
   backgroundColor: "#000000",
   textColor: "#ffffff",
+  inactiveTextColor: "#999999",
   errorColor: "ff7200",
   activeTintColor: "tomato",
-  inactiveTintColor: "gray",
+  inactiveTintColor: "#555555",
   btnPrimary: {
     backgroundColor: "#007bff",
     textColor: "#ffffff"
   },
   btnSecondary: {
-    backgroundColor: "#6c757d",
+    backgroundColor: "#333333",
     textColor: "#ffffff"
   },
   btnSuccess: {
@@ -40,7 +44,8 @@ const darkTheme = {
   btnDark: {
     backgroundColor: "#343a40",
     textColor: "#ffffff"
-  }
+  },
+  VictoryTheme: victoryDarkTheme
 };
 
 const lightTheme = {
@@ -82,7 +87,8 @@ const lightTheme = {
   btnDark: {
     backgroundColor: "#343a40",
     textColor: "#ffffff"
-  }
+  },
+  VictoryTheme: victoryDarkTheme
 };
 
 /**

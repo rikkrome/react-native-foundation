@@ -1,6 +1,6 @@
 module.exports = {
   deepLink: {
-    enable: true,
+    enable: false,
     path: "AnalyticsViewOne"
   }
 };

@@ -1,0 +1,5 @@
+// AUTH CONSTANTS
+//
+
+export const AUTH_ACTIVE = 'AUTH_ACTIVE';
+export const AUTH_INACTIVE = 'AUTH_INACTIVE';

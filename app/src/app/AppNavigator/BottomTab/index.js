@@ -31,7 +31,7 @@ const homeStack = () => (
 );
 
 const profileTabs = () => (
-  <ProfileTabs.Navigator lazy tabBarOptions={{ activeTintColor: 'red' }}>
+  <ProfileTabs.Navigator lazy tabBarOptions={{ indicatorStyle: { backgroundColor: colors.black } }}>
     <ProfileTabs.Screen name="Home" component={HomeScreen} />
     <ProfileTabs.Screen name="Settings" component={HomeScreen} />
   </ProfileTabs.Navigator>

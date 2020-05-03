@@ -4,6 +4,10 @@ import {
 } from '../../design';
 
 const styles = StyleSheet.create({
+  screen: {
+    flex: 1,
+    backgroundColor: 'black',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

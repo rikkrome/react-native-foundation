@@ -28,17 +28,23 @@ const AppNavigationContainer = () => {
   }, [lifecycle]);
 
   let screen = (
-    <Stack.Screen
-      name="LoadingScreen"
-      component={LoadingScreen}
-      headerMode="none"
-      options={{ headerShown: false }}
-    />
+    <Stack.Navigator>
+      <Stack.Screen
+        name="LoadingScreen"
+        component={LoadingScreen}
+        headerMode="none"
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
   );
   if (!loading && core.hasAuthSession) {
     screen = <AppStack />;
   } else if (!loading && !core.hasAuthSession) {
-    screen = <Stack.Screen name="LoginScreen" component={LoginScreen} headerMode="none" />;
+    screen = (
+      <Stack.Navigator>
+        <Stack.Screen name="LoginScreen" component={LoginScreen} headerMode="none" />
+      </Stack.Navigator>
+    );
   }
   useEffect(() => {
     if (ref && ref.current) {

@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import HomeScreen from '../../../view-modes/Home';
 import HomeSVG from '../../../assets/svg/icons/ecommerceHouseSvg';
 import StatisticsSvg from '../../../assets/svg/icons/statisticsSvg';
@@ -31,10 +32,16 @@ const homeStack = () => (
 );
 
 const profileTabs = () => (
+
   <ProfileTabs.Navigator lazy tabBarOptions={{ indicatorStyle: { backgroundColor: colors.black } }}>
-    <ProfileTabs.Screen name="Home" component={HomeScreen} />
-    <ProfileTabs.Screen name="Settings" component={HomeScreen} />
+    <ProfileTabs.Screen
+      name="profileTab1"
+      component={HomeScreen}
+      options={{ tabBarLabel: 'profileTab1' }}
+    />
+    <ProfileTabs.Screen name="profileTab2" component={HomeScreen} />
   </ProfileTabs.Navigator>
+
 );
 
 const profileStack = () => (
@@ -48,8 +55,12 @@ const profileStack = () => (
     }}
   >
     <ProfileStack.Screen
-      name="Home"
+      name="ProfileTopTabs"
       component={profileTabs}
+      title="test"
+      options={{
+        title: 'My profile',
+      }}
     />
   </ProfileStack.Navigator>
 );
@@ -66,7 +77,6 @@ const BottomTab = () => (
     <Tab.Screen
       name="Home"
       component={homeStack}
-      lazy
       options={{
         tabBarLabel: '',
         tabBarIcon: ({ color, size }) => (
@@ -86,7 +96,7 @@ const BottomTab = () => (
       }}
     />
     <Tab.Screen
-      name="Profile"
+      name="ProfileBottomTab"
       component={profileStack}
       options={{
         tabBarLabel: '',

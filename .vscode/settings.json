@@ -1,0 +1,32 @@
+{
+  "eslint.workingDirectories": [
+    {
+      "directory": "./app",
+      "changeProcessCWD": true
+    }
+  ]
+  "editor.formatOnSave": true,
+  // turn it off for JS and JSX, we will do this via eslint
+  "[javascript]": {
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.formatOnSave": false
+  },
+  // tell the ESLint plugin to run on save
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "editor.tabSize": 2,
+  "window.zoomLevel": 0,
+  "cSpell.userWords": [
+    "dlog",
+    "lifecycle",
+    "realtime"
+  ],
+  "cSpell.words": [
+    "Seekbar"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
